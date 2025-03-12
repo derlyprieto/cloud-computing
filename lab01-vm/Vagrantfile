@@ -1,0 +1,10 @@
+Vagrant.configure("2") do |config|
+    config.vm.box = "cloudicio/ubuntu-server"
+    config.vm.box_version = "24.04.1"
+    config.vm.network "private_network", ip: "192.168.56.4"
+    config.vm.provider "virtualbox" do |vb|
+        vb.name = "Ubuntu_24.04_VM"
+        vb.memory = "1024"
+        vb.cpus = 1
+    end 
+end
