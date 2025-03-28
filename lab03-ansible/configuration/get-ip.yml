@@ -1,0 +1,10 @@
+---
+- name: Get IP
+  hosts: all
+  tasks:
+    - name: Get ip from hostname
+      ansible.builtin.shell: hostname -I
+      register: hostname_result
+    - name: Print result
+      debug:
+        msg: "{{ hostname_result.stdout }}"

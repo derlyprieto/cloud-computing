@@ -1,0 +1,12 @@
+---
+- name: Publish react site to apache
+  hosts: all
+  become: yes
+  vars:
+    vite_distribution: ../dist
+    ngnix_www: /var/www/html
+  tasks:
+    - name: move site
+      copy:
+        src: "{{ vite_distribution }}/"
+        dest: "{{ ngnix_www }}"       
