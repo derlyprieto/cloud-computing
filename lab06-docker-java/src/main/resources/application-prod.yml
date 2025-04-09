@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: blue
+
+environment:
+  name: Production
